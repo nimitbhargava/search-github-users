@@ -11,18 +11,25 @@
 <body>
 <nav class="navbar navbar-light bg-faded">
     <a class="navbar-brand" href="#">Search GitHub Users</a>
+    <button class="sidebar-toggle btn btn-secondary">Explore</button>
 </nav>
 <div class="row h-100">
-    <div class="col-sm-3">
-        <div class="container users">
-            <input type="text" placeholder="Search GitHub..">
-            <ul class="users-list"></ul>
+    <div class="sidebar col-sm-3 d-none d-sm-block">
+        <div class="container">
+            <div class="input-group pb-2">
+                <input type="text" class="form-control" placeholder="Search for..." data-bind="textInput: userInput">
+            </div>
+            <ul class="list-group" data-bind="foreach: filterUsers">
+                <li class="list-group-item list-group-item-action" data-bind="text: title, click: $parent.displayUser"></li>
+            </ul>
         </div>
     </div>
     <div class="col-sm-9 p-0">
-        <div id="user-detail"></div>
+        <div id="user-info"><p></p></div>
     </div>
 </div>
 <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
