@@ -17,10 +17,10 @@
     <div class="sidebar col-sm-3 d-none d-sm-block">
         <div class="container">
             <div class="input-group pb-2">
-                <input type="text" class="form-control" placeholder="Search for..." data-bind="textInput: userInput">
+                <input type="text" class="form-control" placeholder="Search for..." data-bind="textInput: userInput, valueUpdate: 'afterkeydown'">
             </div>
             <ul class="list-group" data-bind="foreach: filterUsers">
-                <li class="list-group-item list-group-item-action" data-bind="text: title, click: $parent.displayUser"></li>
+                <li class="list-group-item list-group-item-action" data-bind="text: login, click: $parent.displayUser"></li>
             </ul>
         </div>
     </div>
