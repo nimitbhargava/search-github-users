@@ -16,10 +16,12 @@ var ViewModel = function () {
             type: 'GET',
             url: url
         }).done(function (data) {
-            result = data.items;
+            return data.items;
         }).fail(function () {
-            result = [];
+            result = [{"login":"lalu"}];
         });
+        result = [{"login":"test"}];
+        console.log(result);
         return result;
     }, this);
 };
